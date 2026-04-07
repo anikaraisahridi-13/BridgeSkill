@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Mentor Dashboard</title>
+
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/script.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<h1>Mentor Dashboard</h1>
+
+<!-- Pending Requests -->
+
+<h2>Pending Requests</h2>
+
+{% for req in requests %}
+
+<div class="card">
+
+<p><b>Student Email:</b> {{ req.student_email }}</p>
+<p><b>Status:</b> {{ req.status }}</p>
+
+<div style="margin-top:10px;">
+
+<a class="btn-primary" href="/accept/{{ req.id }}">Accept</a>
+<a class="btn-secondary" href="/reject/{{ req.id }}">Reject</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+
+{% if requests|length == 0 %}
+<p>No requests yet.</p>
+{% endif %}
+
+
+<!--  Profile Section -->
+
+<div class="card">
+
+<h3>Your Profile</h3>
+
+<p>Update your experience and skills</p>
+
+<a class="btn-secondary" href="/mentor_profile">View Profile</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

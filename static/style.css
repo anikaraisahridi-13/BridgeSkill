@@ -1,0 +1,163 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Inter', sans-serif;
+}
+
+body{
+background: linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+min-height:100vh;
+}
+
+/* Navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+letter-spacing:2px;
+}
+
+.nav-links a{
+margin-left:20px;
+text-decoration:none;
+color:white;
+font-size:14px;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#38bdf8;
+}
+
+/* Hero */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 10%;
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero-text h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+opacity:.8;
+margin-bottom:30px;
+}
+
+.hero-buttons a{
+padding:12px 25px;
+margin-right:10px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-primary{
+background:#38bdf8;
+color:black;
+}
+
+.btn-secondary{
+border:1px solid #38bdf8;
+color:#38bdf8;
+}
+
+/* Image */
+
+.hero img{
+width:420px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0px);}
+
+}
+
+/* Forms */
+
+.form-container{
+
+width:400px;
+margin:auto;
+margin-top:100px;
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:10px;
+backdrop-filter:blur(15px);
+
+}
+
+.form-container h2{
+margin-bottom:20px;
+text-align:center;
+}
+
+input,select{
+
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:6px;
+
+}
+
+button{
+
+width:100%;
+margin-top:20px;
+padding:12px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+font-weight:600;
+
+}
+
+/* Dashboard */
+
+.dashboard{
+
+padding:60px 10%;
+
+}
+
+.card{
+
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:10px;
+margin-top:20px;
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+background:rgba(255,255,255,0.08);
+
+}
