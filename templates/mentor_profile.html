@@ -2,15 +2,21 @@
 <html>
 
 <head>
-
 <title>Mentor Profile</title>
 
 <link rel="stylesheet" href="/static/style.css">
 <script src="/static/script.js" defer></script>
-
 </head>
 
 <body>
+
+<div class="navbar">
+    <div class="logo">BridgeSkill</div>
+    <div class="nav-links">
+        <a href="/mentor">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
 
 <div class="dashboard">
 
@@ -18,13 +24,14 @@
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a" width="120" style="border-radius:50%">
+<img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg"
+width="120" style="border-radius:50%">
 
-<h2>John Smith</h2>
+<h2>{{ mentor.name }}</h2>
 
-<p>Senior Software Engineer</p>
+<p>{{ mentor.role }}</p>
 
-<p>Experience: 10+ Years in AI & Cloud</p>
+<p>Email: {{ mentor.email }}</p>
 
 </div>
 

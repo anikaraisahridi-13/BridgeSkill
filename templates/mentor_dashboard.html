@@ -11,13 +11,29 @@
 
 <body>
 
+<!-- Navbar -->
+<div class="navbar">
+
+    <div class="logo">BridgeSkill</div>
+
+    <div class="nav-links">
+        <a href="/upload_slide">Upload Slides</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</div>
+
+
 <div class="dashboard">
 
 <h1>Mentor Dashboard</h1>
 
 <!-- Pending Requests -->
-
 <h2>Pending Requests</h2>
+
+{% if requests|length == 0 %}
+<p style="opacity:0.7;">No requests yet.</p>
+{% endif %}
 
 {% for req in requests %}
 
@@ -26,7 +42,7 @@
 <p><b>Student Email:</b> {{ req.student_email }}</p>
 <p><b>Status:</b> {{ req.status }}</p>
 
-<div style="margin-top:10px;">
+<div style="margin-top:15px; display:flex; gap:10px;">
 
 <a class="btn-primary" href="/accept/{{ req.id }}">Accept</a>
 <a class="btn-secondary" href="/reject/{{ req.id }}">Reject</a>
@@ -38,13 +54,7 @@
 {% endfor %}
 
 
-{% if requests|length == 0 %}
-<p>No requests yet.</p>
-{% endif %}
-
-
-<!--  Profile Section -->
-
+<!-- Profile Section -->
 <div class="card">
 
 <h3>Your Profile</h3>
@@ -52,6 +62,18 @@
 <p>Update your experience and skills</p>
 
 <a class="btn-secondary" href="/mentor_profile">View Profile</a>
+
+</div>
+
+
+<!-- Slides Section (NEW 🔥) -->
+<div class="card">
+
+<h3>Your Slides</h3>
+
+<p>Upload and manage your teaching materials</p>
+
+<a class="btn-primary" href="/upload_slide">Upload New Slide</a>
 
 </div>
 

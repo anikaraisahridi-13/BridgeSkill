@@ -13,14 +13,14 @@ class Database:
 
     def execute(self, query, values=None):
         self.cur.execute(query, values or ())
-        self.conn.commit()
-        return self.cur
-
-    def fetchone(self):
-        return self.cur.fetchone()
+        if query.strip().lower().startswith(("insert", "update", "delete")):
+            self.conn.commit()
 
     def fetchall(self):
         return self.cur.fetchall()
+
+    def fetchone(self):
+        return self.cur.fetchone()
 
     def close(self):
         self.cur.close()

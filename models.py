@@ -12,18 +12,18 @@ class User:
         )
 
     def login(self, db):
-        result = db.execute(
+        db.execute(
             "SELECT * FROM users WHERE email=%s AND password=%s",
             (self.email, self.password)
         )
-        return result.fetchone()
+        return db.fetchone()   # ✅ FIXED
 
 
 class Student(User):
 
     def get_mentors(self, db):
-        result = db.execute("SELECT * FROM mentors")
-        return result.fetchall()
+        db.execute("SELECT * FROM mentors")
+        return db.fetchall()   # ✅ FIXED
 
     def request_mentor(self, db, mentor_id):
         db.execute(
@@ -35,5 +35,5 @@ class Student(User):
 class Mentor(User):
 
     def get_requests(self, db):
-        result = db.execute("SELECT * FROM requests")
-        return result.fetchall()
+        db.execute("SELECT * FROM requests")
+        return db.fetchall()   # ✅ FIXED

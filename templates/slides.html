@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Slides</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/script.js" defer></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">BridgeSkill</div>
+    <div class="nav-links">
+        <a href="/student">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="dashboard">
+
+<h1>Available Slides</h1>
+
+{% for s in slides %}
+
+<div class="card">
+
+<h3>{{ s.title }}</h3>
+
+<p>Uploaded by: {{ s.mentor_email }}</p>
+
+<a class="btn-primary" href="/uploads/{{ s.filename }}" download>
+Download Slide
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
 <title>Student Dashboard</title>
 
 <link rel="stylesheet" href="/static/style.css">
@@ -12,41 +11,60 @@
 
 <body>
 
+<!-- Navbar -->
+<div class="navbar">
+
+    <div class="logo">BridgeSkill</div>
+
+    <div class="nav-links">
+        <a href="/slides">Slides</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</div>
+
+
 <div class="dashboard">
 
 <h1>Find Your Mentor</h1>
 
-<!-- Static Cards (Design part) -->
+<!-- Static Cards (Design Showcase) -->
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde"
+<img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg"
 width="80" style="border-radius:50%">
 
 <h3>AI Engineer</h3>
 
 <p>10 years experience in Machine Learning</p>
 
-<a class="btn-primary" href="#">Explore</a>
+<a class="btn-secondary" href="#">Explore</a>
 
 </div>
 
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9"
+<img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde"
 width="80" style="border-radius:50%">
 
 <h3>Product Manager</h3>
 
 <p>Worked at global startups</p>
 
-<a class="btn-primary" href="#">Explore</a>
+<a class="btn-secondary" href="#">Explore</a>
 
 </div>
 
 
-<!-- Dynamic Mentors from Database -->
+<!-- Dynamic Mentors -->
+
+<h2 style="margin-top:40px;">Available Mentors</h2>
+
+{% if mentors|length == 0 %}
+<p style="opacity:0.7;">No mentors available right now.</p>
+{% endif %}
 
 {% for mentor in mentors %}
 
@@ -65,6 +83,20 @@ Request Mentorship
 </div>
 
 {% endfor %}
+
+
+<!-- Slides Section (NEW 🔥) -->
+<div class="card">
+
+<h3>Learning Materials</h3>
+
+<p>Access slides shared by mentors</p>
+
+<a class="btn-primary" href="/slides">
+View Slides
+</a>
+
+</div>
 
 </div>
 
